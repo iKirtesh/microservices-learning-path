@@ -14,7 +14,7 @@
 
 ---
 
-Welcome to the Microservices Learning Path! This guide will help you understand and implement microservices architecture through practical examples and projects.
+Welcome to the Microservices Learning Path! This comprehensive guide will help you master microservices architecture through structured learning modules and practical patterns.
 
 ## 📚 Learning Topics
 
