@@ -26,13 +26,45 @@ A high-performance caching service implementation using Spring Boot and Redis, d
 
 2. **Run with Docker Compose**
    ```bash
+   # Build with Docker layer caching
+   docker-compose build --no-cache
+   
+   # Start services with optimized caching
    docker-compose up -d
    ```
 
 3. **Access Services**
    - Caching Service: http://localhost:8080
    - API Documentation: http://localhost:8080/swagger-ui.html
-   - Redis Commander (Web UI): http://localhost:8081
+   - Redis Insight (Web UI): http://localhost:5540
+
+## 🐳 Docker Caching Optimizations
+
+### 1. Multi-stage Build
+```dockerfile
+# Build stage
+FROM eclipse-temurin:17-jdk-jammy as build
+WORKDIR /app
+COPY . .
+RUN ./gradlew build -x test
+
+# Production stage
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /app
+COPY --from=build /app/build/libs/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+### 2. Docker Compose Optimizations
+- **Persistent Volumes**: Redis data is persisted using named volumes
+- **Health Checks**: Automatic monitoring of Redis service
+- **Resource Limits**: Configured for optimal performance
+
+### 3. Redis Configuration
+- **Persistence**: AOF (Append Only File) enabled for data durability
+- **Memory Management**: Max memory policy set to `allkeys-lru`
+- **Replication**: Ready for scaling with master-replica setup
 
 ## 🏗️ System Architecture
 
@@ -114,7 +146,21 @@ public class CacheConfig extends CachingConfigurerSupport {
 }
 ```
 
-## 🧪 Testing the Service
+## 🧪 Testing the Service with Docker
+
+### Using Docker Exec
+```bash
+# Access Redis CLI
+docker exec -it redis redis-cli
+
+# Monitor Redis commands
+docker exec -it redis redis-cli monitor
+
+# Check Redis info
+docker exec -it redis redis-cli info
+```
+
+### Using cURL
 
 1. **Create a Product**
    ```bash
@@ -175,7 +221,17 @@ docker build -t caching-service .
 
 ### Run with Docker Compose
 ```bash
+# Build with cache (faster subsequent builds)
+docker-compose build --no-cache
+
+# Start services in detached mode
 docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Scale Redis instances (example)
+docker-compose up -d --scale redis=3
 ```
 
 ## 📊 Monitoring
