@@ -21,7 +21,7 @@ Welcome to the Microservices Learning Path! This guide will help you understand 
 
 ### 3. Hands-on Projects
 
-#### [Decomposition of Service](./DecompositionOfService/README.md)
+#### [Decomposition of Service](./DecompositionOfService)
 A practical implementation of a microservices-based order and payment system demonstrating service decomposition, inter-service communication, and database per service pattern.
 
 Key Features:
