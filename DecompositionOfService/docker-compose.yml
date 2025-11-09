@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  order-db:
+    image: mysql:8.0
+    container_name: order-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: order_db
+      MYSQL_USER: order_user
+      MYSQL_PASSWORD: orderpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - order_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+    networks:
+      - microservices-network
+
+  payment-db:
+    image: mysql:8.0
+    container_name: payment-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: payment_db
+      MYSQL_USER: payment_user
+      MYSQL_PASSWORD: paymentpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - payment_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
+
+volumes:
+  order_db_data:
+  payment_db_data:
