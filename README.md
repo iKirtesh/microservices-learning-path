@@ -18,6 +18,9 @@
 - [🔄 Saga Pattern](./SAGA_PATTERN.md)
 - [⚡ Event-Driven Architecture](./EVENT_DRIVEN_ARCHITECTURE.md)
 - [🌐 Service Mesh](./SERVICE_MESH.md)
+- [🗃️ Database per Service](./DATABASE_PER_SERVICE.md)
+- [🔄 Retry & Timeout](./RETRY_TIMEOUT_PATTERN.md)
+- [🗄️ Caching Strategies](./CACHING_STRATEGIES.md)
 
 ---
 
@@ -61,18 +64,19 @@ Welcome to the Microservices Learning Path! This comprehensive guide will help y
 - [ ] Distributed Logging & Monitoring
 
 ### Phase 3: Data & Transactions (5-6 weeks)
-- [ ] Database per Service Pattern
+- [ ] [Database per Service Pattern](./DATABASE_PER_SERVICE.md)
 - [ ] Event Sourcing
 - [ ] CQRS Pattern
 - [ ] Saga Pattern for Distributed Transactions
 - [ ] Data Consistency Patterns
+- [ ] [Caching Strategies](./CACHING_STRATEGIES.md)
 
 ### Phase 4: Resilience & Performance (4-5 weeks)
 - [ ] Circuit Breaker Pattern
-- [ ] Retry & Timeout Patterns
+- [ ] [Retry & Timeout Patterns](./RETRY_TIMEOUT_PATTERN.md)
 - [ ] Bulkhead Pattern
 - [ ] Rate Limiting & Throttling
-- [ ] Caching Strategies
+- [ ] [Caching Strategies](./CACHING_STRATEGIES.md)
 
 ### Phase 5: Advanced Architecture (5-6 weeks)
 - [ ] Event-Driven Architecture
