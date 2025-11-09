@@ -1,89 +1,206 @@
 # Microservices Learning Path
 
-[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-green.svg)](https://spring.io/projects/spring-boot)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🗂️ Navigation
+## 🗺️ Navigation
 
-- [📚 Learning Path](#-learning-topics)
-- [🔍 Microservices Basics](./MICROSERVICES_BASICS.md)
-- [🧩 Decomposition Guide](./DECOMPOSITION.md)
-- [🚀 Getting Started](#-getting-started)
+### 📚 Core Concepts
+- [🔍 Microservices Basics](./MICROSERVICES_BASICS.md) - Fundamental concepts and principles
+- [🧩 Service Decomposition](./DECOMPOSITION.md) - Breaking down monolithic applications
+
+### 🏗️ Communication Patterns
+- [🌉 API Gateway](./API_GATEWAY.md) - Single entry point for all clients
+- [🔍 Service Discovery](./SERVICE_DISCOVERY.md) - Dynamic service registration and discovery
+- [⚡ Circuit Breaker](./CIRCUIT_BREAKER.md) - Prevent cascading failures
+
+### ⚙️ Infrastructure
+- [⚙️ Config Server](./CONFIG_SERVER.md) - Centralized configuration management
+- [🌐 Service Mesh](./SERVICE_MESH.md) - Service-to-service communication infrastructure
+
+### 🎯 Advanced Patterns
+- [🎭 CQRS Pattern](./CQRS_PATTERN.md) - Command Query Responsibility Segregation
+- [🔄 Saga Pattern](./SAGA_PATTERN.md) - Managing distributed transactions
+- [⚡ Event-Driven Architecture](./EVENT_DRIVEN_ARCHITECTURE.md) - Building event-based systems
+
+### 🚀 Quick Links
 - [📦 Project Structure](#-project-structure)
+- [🔐 Security](#-security)
+- [📚 Additional Resources](#-additional-resources)
 
 ---
 
 Welcome to the Microservices Learning Path! This comprehensive guide will help you master microservices architecture through structured learning modules and practical patterns.
 
-## 📚 Learning Topics
+## 🚀 Microservices Learning Roadmap
 
-### 1. Introduction to Microservices
-- [ ] What are Microservices?
-- [ ] Monolithic vs Microservices Architecture
-- [ ] Benefits and Challenges
-- [ ] When to use Microservices
+### 1️⃣ Core Concepts (3-4 weeks)
+- [ ] **Microservices Fundamentals**
+  - [ ] Monolithic vs Microservices
+  - [ ] Bounded Contexts
+  - [ ] Domain-Driven Design (DDD)
+  - [ ] API-First Design
+  - [ ] [Read More →](./MICROSERVICES_BASICS.md)
 
-### 2. Core Concepts
-- [x] Decomposition of Services
-- [ ] API Gateway Pattern
-- [ ] Service Discovery
-- [ ] Circuit Breaker Pattern
-- [ ] Distributed Tracing
-- [ ] Event Sourcing
-- [ ] CQRS (Command Query Responsibility Segregation)
+- [ ] **Service Decomposition**
+  - [ ] Decomposition Strategies
+  - [ ] Database per Service
+  - [ ] Transaction Management
+  - [ ] [Read More →](./DECOMPOSITION.md)
 
-### 3. 🛠️ Hands-on Projects
+### 2️⃣ Communication & Integration (4-5 weeks)
+- [ ] **API Gateway**
+  - [ ] Routing & Composition
+  - [ ] Authentication & Authorization
+  - [ ] Rate Limiting & Throttling
+  - [ ] [Read More →](./API_GATEWAY.md)
 
-#### [🛍️ Order & Payment System](./DecompositionOfService)
-A practical microservices implementation with two core services communicating via REST APIs, featuring independent databases and comprehensive documentation.
+- [ ] **Service Discovery & Load Balancing**
+  - [ ] Client-side vs Server-side Discovery
+  - [ ] Service Registry
+  - [ ] Load Balancing Strategies
+  - [ ] [Read More →](./SERVICE_DISCOVERY.md)
 
-**Tech Stack**:
-- **Order Service**: Spring Boot, JPA, MySQL, REST
-- **Payment Service**: Spring Boot, JPA, MySQL, REST
-- **Tools**: Docker, Swagger, Postman
+- [ ] **Resilience Patterns**
+  - [ ] Circuit Breaker
+  - [ ] Retry & Timeout
+  - [ ] Bulkhead Pattern
+  - [ ] [Read More →](./CIRCUIT_BREAKER.md)
 
-**Key Features**:
-- ✅ Independent service deployment
-- 🔄 RESTful inter-service communication
-- 🗃️ Database per service pattern
-- 📚 Swagger API documentation
-- 🛡️ Centralized exception handling
-- 🐳 Docker Compose for local development
+### 3️⃣ Data Management (4-5 weeks)
+- [ ] **Distributed Data Patterns**
+  - [ ] Database per Service
+  - [ ] Shared Database
+  - [ ] Saga Pattern
+  - [ ] [Read More →](./SAGA_PATTERN.md)
 
-### 4. Advanced Topics
-- [ ] Container Orchestration with Kubernetes
-- [ ] Service Mesh with Istio
-- [ ] Event-Driven Architecture
-- [ ] Saga Pattern for Distributed Transactions
-- [ ] API Versioning Strategies
-- [ ] Security in Microservices (OAuth2, JWT)
+- [ ] **CQRS & Event Sourcing**
+  - [ ] Command/Query Separation
+  - [ ] Event Sourcing
+  - [ ] Event Sourcing with CQRS
+  - [ ] [Read More →](./CQRS_PATTERN.md)
 
-### 5. Best Practices
-- [ ] Domain-Driven Design (DDD)
-- [ ] API Design Guidelines
-- [ ] Testing Strategies
-- [ ] Monitoring and Logging
-- [ ] CI/CD for Microservices
+- [ ] **Event-Driven Architecture**
+  - [ ] Event Sourcing
+  - [ ] Event Streaming (Kafka/RabbitMQ)
+  - [ ] Eventual Consistency
+  - [ ] [Read More →](./EVENT_DRIVEN_ARCHITECTURE.md)
+
+### 4️⃣ Infrastructure & Operations (5-6 weeks)
+- [ ] **Containerization & Orchestration**
+  - [ ] Docker Fundamentals
+  - [ ] Kubernetes Basics
+  - [ ] Service Mesh (Istio/Linkerd)
+  - [ ] [Read More →](./SERVICE_MESH.md)
+
+- [ ] **Configuration & Secrets**
+  - [ ] Centralized Configuration
+  - [ ] Secrets Management
+  - [ ] Vault Integration
+  - [ ] [Read More →](./CONFIG_SERVER.md)
+
+- [ ] **Observability**
+  - [ ] Distributed Tracing
+  - [ ] Logging & Monitoring
+  - [ ] Metrics & Alerting
+  - [ ] Service Level Objectives (SLOs)
+
+### 5️⃣ Security & Advanced Topics (4-5 weeks)
+- [ ] **Security**
+  - [ ] OAuth2 / OpenID Connect
+  - [ ] JWT & API Security
+  - [ ] mTLS & Service Mesh Security
+  - [ ] Vault for Secrets Management
+
+- [ ] **CI/CD & GitOps**
+  - [ ] CI/CD Pipelines
+  - [ ] Infrastructure as Code (Terraform)
+  - [ ] GitOps with ArgoCD/Flux
+  - [ ] Progressive Delivery
+
+### 6️⃣ Production Readiness (3-4 weeks)
+- [ ] **Testing Strategies**
+  - [ ] Contract Testing
+  - [ ] Chaos Engineering
+  - [ ] Performance Testing
+  - [ ] Security Testing
+
+- [ ] **Scaling & Performance**
+  - [ ] Horizontal Scaling
+  - [ ] Caching Strategies
+  - [ ] Database Scaling
+  - [ ] Performance Optimization
+
+- [ ] **Deployment Strategies**
+  - [ ] Blue/Green Deployments
+  - [ ] Canary Releases
+  - [ ] Feature Flags
+  - [ ] A/B Testing
 
 ## 🚀 Getting Started
 
-1. **Prerequisites**
-   - Java 17+
-   - Gradle 8.0+
-   - Docker and Docker Compose
-   - Basic knowledge of Spring Boot
+### Prerequisites
 
-2. **🚀 Recommended Learning Path**
+Before diving into microservices, make sure you have the following installed:
 
-   | Step | Task | Expected Outcome |
-   |------|------|------------------|
-   | 1 | [Explore Order Service](./DecompositionOfService/Order) | Understand order management implementation |
-   | 2 | [Examine Payment Service](./DecompositionOfService/Payment) | Learn payment processing flow |
-   | 3 | [Study API Contracts](./DecompositionOfService#api-endpoints) | Understand service communication |
-   | 4 | [Run with Docker Compose](./DecompositionOfService#quick-start) | Deploy the complete system |
-   | 5 | [Test API Endpoints](./DecompositionOfService#api-documentation) | Verify service functionality |
-   | 6 | Extend Functionality | Add new features to the services |
+- **Java Development Kit (JDK) 17+**
+- **Gradle 8.0+** or **Maven 3.6+**
+- **Docker** and **Docker Compose**
+- **Git** for version control
+- **IDE** (IntelliJ IDEA, VS Code, or Eclipse with proper plugins)
+- **Postman** or similar API testing tool
+- **Basic knowledge of Spring Boot and RESTful APIs**
+
+### Quick Start with Example Project
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/microservices-learning-path.git
+   cd microservices-learning-path/DecompositionOfService
+   ```
+
+2. **Run with Docker Compose**
+   ```bash
+   docker-compose up -d
+   ```
+   This will start all required services including:
+   - Order Service
+   - Payment Service
+   - MySQL Database
+   - API Documentation (Swagger UI)
+
+3. **Access Services**
+   - **Order Service**: http://localhost:8080
+   - **Payment Service**: http://localhost:8081
+   - **API Documentation**: http://localhost:8080/swagger-ui.html
+
+### Learning Path Implementation
+
+| Phase | Focus Area | Example Implementation |
+|-------|------------|-------------------------|
+| 1 | Core Concepts | [Service Decomposition Example](./DecompositionOfService) |
+| 2 | Communication | [API Gateway & Service Discovery](./API_GATEWAY.md) |
+| 3 | Data Management | [Saga Pattern Implementation](./SAGA_PATTERN.md) |
+| 4 | Infrastructure | [Docker & Kubernetes Setup](./SERVICE_MESH.md) |
+| 5 | Security | [OAuth2 & JWT Implementation](#) |
+| 6 | Production | [CI/CD Pipeline Setup](#) |
+
+### Next Steps
+
+1. **Explore the Code**
+   - Study the service decomposition in the example project
+   - Examine API contracts and communication patterns
+   - Review the database schema and transactions
+
+2. **Hands-on Practice**
+   - Add a new service (e.g., Notification Service)
+   - Implement a new API endpoint
+   - Add a new feature using the patterns learned
+
+3. **Experiment**
+   - Try different deployment strategies
+   - Test resilience patterns
+   - Implement monitoring and logging
 
 ## 📚 Additional Resources
 
