@@ -7,7 +7,8 @@
 ## 🗂️ Navigation
 
 - [📚 Learning Path](#-learning-topics)
-- [🔍 Decomposition Guide](./DECOMPOSITION.md)
+- [🔍 Microservices Basics](./MICROSERVICES_BASICS.md)
+- [🧩 Decomposition Guide](./DECOMPOSITION.md)
 - [🚀 Getting Started](#-getting-started)
 - [📦 Project Structure](#-project-structure)
 
