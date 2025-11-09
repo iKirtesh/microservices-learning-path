@@ -1,4 +1,4 @@
-# Microservices Learning Path
+# 🚀 Complete Microservices Learning Path
 
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-green.svg)](https://spring.io/projects/spring-boot)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,8 +6,20 @@
 ## 🗺️ Navigation
 
 ### 📚 Core Concepts
-- [🔍 Microservices Basics](./MICROSERVICES_BASICS.md) - Fundamental concepts and principles
-- [🧩 Service Decomposition](./DECOMPOSITION.md) - Breaking down monolithic applications
+- [🔍 Microservices Fundamentals](./MICROSERVICES_BASICS.md)
+- [🧩 Service Decomposition](./DECOMPOSITION.md)
+- [🌉 API Gateway](./API_GATEWAY.md)
+- [🔍 Service Discovery](./SERVICE_DISCOVERY.md)
+- [⚡ Circuit Breaker](./CIRCUIT_BREAKER.md)
+- [⚙️ Config Server](./CONFIG_SERVER.md)
+
+### 🏗️ Advanced Patterns
+- [🎭 CQRS Pattern](./CQRS_PATTERN.md)
+- [🔄 Saga Pattern](./SAGA_PATTERN.md)
+- [⚡ Event-Driven Architecture](./EVENT_DRIVEN_ARCHITECTURE.md)
+- [🌐 Service Mesh](./SERVICE_MESH.md)
+
+---
 
 ### 🏗️ Communication Patterns
 - [🌉 API Gateway](./API_GATEWAY.md) - Single entry point for all clients
@@ -32,7 +44,163 @@
 
 Welcome to the Microservices Learning Path! This comprehensive guide will help you master microservices architecture through structured learning modules and practical patterns.
 
-## 🚀 Microservices Learning Roadmap
+## 🎯 Microservices Learning Roadmap
+
+### Phase 1: Core Concepts (3-4 weeks)
+- [ ] Monolithic vs Microservices Architecture
+- [ ] Domain-Driven Design (DDD) Fundamentals
+- [ ] RESTful API Design Principles
+- [ ] Microservices Communication Styles
+- [ ] Containerization Basics with Docker
+
+### Phase 2: Service Design (4-5 weeks)
+- [ ] Service Decomposition Strategies
+- [ ] API Gateway Pattern
+- [ ] Service Discovery & Registration
+- [ ] Configuration Management
+- [ ] Distributed Logging & Monitoring
+
+### Phase 3: Data & Transactions (5-6 weeks)
+- [ ] Database per Service Pattern
+- [ ] Event Sourcing
+- [ ] CQRS Pattern
+- [ ] Saga Pattern for Distributed Transactions
+- [ ] Data Consistency Patterns
+
+### Phase 4: Resilience & Performance (4-5 weeks)
+- [ ] Circuit Breaker Pattern
+- [ ] Retry & Timeout Patterns
+- [ ] Bulkhead Pattern
+- [ ] Rate Limiting & Throttling
+- [ ] Caching Strategies
+
+### Phase 5: Advanced Architecture (5-6 weeks)
+- [ ] Event-Driven Architecture
+- [ ] Service Mesh (Istio/Linkerd)
+- [ ] Serverless Microservices
+- [ ] Container Orchestration (Kubernetes)
+- [ ] Multi-cloud Deployments
+
+### Phase 6: Security & Operations (4-5 weeks)
+- [ ] OAuth2 & JWT Authentication
+- [ ] mTLS & Service-to-Service Security
+- [ ] Secrets Management
+- [ ] CI/CD Pipelines
+- [ ] GitOps Practices
+
+## 🛠️ Essential Microservices Patterns (48 Total)
+
+### 1-10: Core Patterns
+1. API Gateway
+2. Service Discovery
+3. Circuit Breaker
+4. Service Registry
+5. Externalized Configuration
+6. Service Template
+7. Bulkhead
+8. Retry
+9. Timeouts
+10. Rate Limiter
+
+### 11-20: Data Patterns
+11. Database per Service
+12. Shared Database
+13. Saga
+14. CQRS
+15. Event Sourcing
+16. API Composition
+17. Materialized View
+18. Domain Events
+19. Outbox Pattern
+20. Transaction Log Tailing
+
+### 21-30: Resilience Patterns
+21. Circuit Breaker
+22. Bulkhead
+23. Retry
+24. Timeout
+25. Fallback
+26. Health Check API
+27. Externalized Configuration
+28. Service Template
+29. Service Instance per Container
+30. Service Deployment Platform
+
+### 31-40: Deployment Patterns
+31. Multiple Service Instances per Host
+32. Service Instance per Host
+33. Service Instance per VM
+34. Service Instance per Container
+35. Serverless Deployment
+36. Service Mesh
+37. Sidecar
+38. Ambassador
+39. Adapter
+40. Chassis
+
+### 41-48: Testing & UI Patterns
+41. Service Component Test
+42. Service Integration Contract Test
+43. End-to-End Test
+44. Consumer-Driven Contract Test
+45. Consumer-Side Contract Test
+46. Server-Side Page Fragment Composition
+47. Client-Side UI Composition
+48. Backend for Frontend (BFF)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Java Development Kit (JDK) 17+**
+- **Gradle 8.0+** or **Maven 3.6+**
+- **Docker** and **Docker Compose**
+- **Git** for version control
+- **IDE** (IntelliJ IDEA, VS Code, or Eclipse with proper plugins)
+- **Postman** or similar API testing tool
+
+### Quick Start
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/microservices-learning-path.git
+   cd microservices-learning-path/DecompositionOfService
+   ```
+
+2. **Run with Docker Compose**
+   ```bash
+   docker-compose up -d
+   ```
+
+3. **Access Services**
+   - Order Service: http://localhost:8080
+   - Payment Service: http://localhost:8081
+   - API Docs: http://localhost:8080/swagger-ui.html
+
+## 📚 Additional Resources
+
+### Books
+- "Microservices Patterns" by Chris Richardson
+- "Building Microservices" by Sam Newman
+- "Monolith to Microservices" by Sam Newman
+- "Domain-Driven Design" by Eric Evans
+
+### Online Courses
+- Microservices with Spring Cloud (Udemy/Pluralsight)
+- Kubernetes for Microservices
+- Cloud-Native Microservices (Coursera/edX)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Happy Learning! 🚀
 
 ### 1️⃣ Core Concepts (3-4 weeks)
 - [ ] **Microservices Fundamentals**
