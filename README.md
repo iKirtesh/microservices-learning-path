@@ -33,18 +33,23 @@ Welcome to the Microservices Learning Path! This guide will help you understand 
 - [ ] Event Sourcing
 - [ ] CQRS (Command Query Responsibility Segregation)
 
-### 3. Hands-on Projects
+### 3. 🛠️ Hands-on Projects
 
-#### [Decomposition of Service](./DecompositionOfService)
-A practical implementation of a microservices-based order and payment system demonstrating service decomposition, inter-service communication, and database per service pattern.
+#### [🛍️ Order & Payment System](./DecompositionOfService)
+A practical microservices implementation with two core services communicating via REST APIs, featuring independent databases and comprehensive documentation.
 
-Key Features:
-- Order Service
-- Payment Service
-- RESTful APIs
-- Docker Compose for database
-- Swagger API Documentation
-- Centralized Exception Handling
+**Tech Stack**:
+- **Order Service**: Spring Boot, JPA, MySQL, REST
+- **Payment Service**: Spring Boot, JPA, MySQL, REST
+- **Tools**: Docker, Swagger, Postman
+
+**Key Features**:
+- ✅ Independent service deployment
+- 🔄 RESTful inter-service communication
+- 🗃️ Database per service pattern
+- 📚 Swagger API documentation
+- 🛡️ Centralized exception handling
+- 🐳 Docker Compose for local development
 
 ### 4. Advanced Topics
 - [ ] Container Orchestration with Kubernetes
@@ -69,12 +74,16 @@ Key Features:
    - Docker and Docker Compose
    - Basic knowledge of Spring Boot
 
-2. **Recommended Learning Path**
-   1. Start with the [Decomposition of Service](./DecompositionOfService/README.md) project
-   2. Understand the service boundaries and API contracts
-   3. Explore how services communicate
-   4. Study the exception handling and validation
-   5. Try extending the services with new features
+2. **🚀 Recommended Learning Path**
+
+   | Step | Task | Expected Outcome |
+   |------|------|------------------|
+   | 1 | [Explore Order Service](./DecompositionOfService/Order) | Understand order management implementation |
+   | 2 | [Examine Payment Service](./DecompositionOfService/Payment) | Learn payment processing flow |
+   | 3 | [Study API Contracts](./DecompositionOfService#api-endpoints) | Understand service communication |
+   | 4 | [Run with Docker Compose](./DecompositionOfService#quick-start) | Deploy the complete system |
+   | 5 | [Test API Endpoints](./DecompositionOfService#api-documentation) | Verify service functionality |
+   | 6 | Extend Functionality | Add new features to the services |
 
 ## 📚 Additional Resources
 

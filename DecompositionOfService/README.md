@@ -1,12 +1,55 @@
-# Microservices Order and Payment System
+# 🛍️ Order & Payment Microservices
 
-[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-green.svg)](https://spring.io/projects/spring-boot)
+[![Java](https://img.shields.io/badge/Java-17%2B-007396?logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project demonstrates a microservices architecture with two main services: Order Service and Payment Service. The system allows creating orders and processing payments in a decoupled manner using RESTful APIs and follows domain-driven design principles. The services are containerized using Docker and can be easily deployed using Docker Compose.
+A practical implementation of a microservices-based order and payment system demonstrating service decomposition, inter-service communication, and database per service pattern.
 
-This project demonstrates a microservices architecture with two main services: Order Service and Payment Service. The system allows creating orders and processing payments in a decoupled manner using RESTful APIs and follows domain-driven design principles. The services are containerized using Docker and can be easily deployed using Docker Compose.
+## 🚀 Features
+
+- **Order Service**: Manage order lifecycle with RESTful endpoints
+- **Payment Service**: Process payments asynchronously
+- **Independent Databases**: Each service has its own MySQL database
+- **Containerized**: Easy deployment with Docker Compose
+- **API Documentation**: Interactive Swagger UI
+- **Centralized Exception Handling**: Consistent error responses
+
+## 🌟 Quick Start
+
+1. **Prerequisites**
+   - Java 17+
+   - Docker & Docker Compose
+   - Gradle 8.0+
+
+2. **Run with Docker Compose**
+   ```bash
+   docker-compose up -d
+   ```
+
+3. **Access Services**
+   - Order Service: http://localhost:8081
+   - Payment Service: http://localhost:8082
+   - Order API Docs: http://localhost:8081/swagger-ui.html
+   - Payment API Docs: http://localhost:8082/swagger-ui.html
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    A[Client] --> B[Order Service]
+    A --> C[Payment Service]
+    B --> D[(Order DB)]
+    C --> E[(Payment DB)]
+    B -->|Process Payment| C
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#4CAF50,stroke:#333
+    style C fill:#2196F3,stroke:#333
+    style D fill:#FFC107,stroke:#333
+    style E fill:#FF9800,stroke:#333
+```
 
 ## 📁 Project Structure
 
@@ -60,35 +103,85 @@ DecompositionOfService/
 └── README.md                       # This file
 ```
 
-## 🚀 Service Decomposition
-
-The system is decomposed into two main services:
+## 🧩 Service Decomposition
 
 ### 1. Order Service (Port: 8081)
-- **Responsibilities**:
-  - Manages order lifecycle (creation, retrieval, status updates)
-  - Handles order validation and processing
-  - Communicates with Payment Service via REST
-  - Implements comprehensive error handling and retry mechanisms
-- **Key Components**:
-  - `OrderController`: REST endpoints for order operations
-  - `OrderService`: Business logic for order processing
-  - `OrderRepository`: Data access layer for orders
-  - `GlobalExceptionHandler`: Centralized exception handling
+
+#### 🎯 Responsibilities
+- Order lifecycle management (CRUD operations)
+- Order validation and status updates
+- Integration with Payment Service
+- Comprehensive error handling
+
+#### 🛠️ Key Components
+| Component | Description |
+|-----------|-------------|
+| `OrderController` | REST endpoints for order operations |
+| `OrderService` | Business logic and workflow |
+| `OrderRepository` | Data access and persistence |
+| `GlobalExceptionHandler` | Centralized error handling |
+| `RestTemplateConfig` | HTTP client configuration |
 
 ### 2. Payment Service (Port: 8082)
-- **Responsibilities**:
-  - Processes payment requests asynchronously
-  - Manages payment status and transaction history
-  - Generates unique transaction IDs
-  - Implements idempotent operations for reliability
-- **Key Components**:
-  - `PaymentController`: REST endpoints for payment operations
-  - `PaymentRepository`: Data access layer for payments
-  - `PaymentService`: Business logic for payment processing
+
+#### 🎯 Responsibilities
+- Payment processing
+- Transaction management
+- Idempotent operations
+- Payment status tracking
+
+#### 🛠️ Key Components
+| Component | Description |
+|-----------|-------------|
+| `PaymentController` | REST endpoints for payment operations |
+| `PaymentService` | Payment processing logic |
+| `PaymentRepository` | Data access and persistence |
+| `PaymentStatus` | Payment status enumeration |
+| `Transaction` | Transaction entity |
 
 
-## API Endpoints
+## 🔌 API Endpoints
+
+### 📦 Order Service
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/orders` | Create a new order |
+| `GET`  | `/orders/{id}` | Get order by ID |
+| `GET`  | `/orders` | Get all orders (paginated) |
+
+### 💳 Payment Service
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/payments` | Process a payment |
+| `GET`  | `/payments/{id}` | Get payment by ID |
+| `GET`  | `/payments/order/{orderId}` | Get payment by order ID |
+
+## 🚦 Example Requests
+
+### Create Order
+```http
+POST /orders
+Content-Type: application/json
+
+{
+  "orderNumber": "ORD-12345",
+  "price": 199.99,
+  "productName": "Wireless Headphones"
+}
+```
+
+### Process Payment
+```http
+POST /payments
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "amount": 199.99
+}
+```
 
 ### Order Service
 
