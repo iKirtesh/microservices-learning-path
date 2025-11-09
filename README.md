@@ -1,5 +1,18 @@
 # Microservices Learning Path
 
+[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.0-green.svg)](https://spring.io/projects/spring-boot)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 🗂️ Navigation
+
+- [📚 Learning Path](#-learning-topics)
+- [🔍 Decomposition Guide](./DECOMPOSITION.md)
+- [🚀 Getting Started](#-getting-started)
+- [📦 Project Structure](#-project-structure)
+
+---
+
 Welcome to the Microservices Learning Path! This guide will help you understand and implement microservices architecture through practical examples and projects.
 
 ## 📚 Learning Topics
